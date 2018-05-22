@@ -34,7 +34,7 @@ I think that the optimal variant of threads number is slightly bigger than the C
 ![10 to 100 threads, zoom](https://cldup.com/TQ3iJbHSbE-3000x3000.png)
 
 ## Results analysis
-The number of requests per seconds increases pretty good until reaching the number of CPU cores (4). Also, it is slightly increased in the next two steps after that moment. Results looking such way because of physical limit for multithreaded applications. When the number of threads is bigger than CPU cores number a computer cannot use the same number of real threats as the application wants to get.
+The number of requests per second increases pretty good until reaching the number of CPU cores (4). Also, it is slightly increased in the next two steps after that moment. Results looking such way because of physical limit for multithreaded applications. When the number of threads is bigger than CPU cores number a computer cannot use the same number of real threats as the application wants to get.
 
 ## CPU info
 ```sh
