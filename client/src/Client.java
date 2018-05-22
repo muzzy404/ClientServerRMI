@@ -35,7 +35,6 @@ public class Client {
             Thread.sleep(workTime);
             executor.shutdownNow();
             final double executionTime = (System.currentTimeMillis() - startTime) / 1000.0;
-            System.out.println(executionTime);
 
             long sum = results
                     .parallelStream()
@@ -50,7 +49,6 @@ public class Client {
                     .mapToLong(Number::longValue)
                     .sum();
 
-            System.out.println();
             System.out.println(String.valueOf(N) +  " " +
                     String.format("%4.3f", sum / executionTime));
 
