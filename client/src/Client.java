@@ -8,8 +8,8 @@ public class Client {
 
     private static final String HOST = "localhost";
 
-    static private int N;                 // number of threads
-    static private int workTime = 100_000; //
+    static private int N;                  // number of threads
+    static private int workTime = 100_000;
 
     public static void main(String[] args) {
         if (args.length != 1 && args.length != 2) {
