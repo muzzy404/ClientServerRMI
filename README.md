@@ -3,18 +3,20 @@
 ## 1 to 9 threads (results table and chart)
 | Threads | Requests per second |
 | ------- | ------------------- |
-| 1       | 20238,898           |
-| 2       | 36558,219           |
-| 3       | 44710,556           |
-| 5       | 48225,485           |
-| 6       | 49697,743           |
-| 7       | 49710,833           |
-| 8       | 49913,172           |
-| 9       | 50817,034           |
+| 1       | 20063,799           |
+| 2       | 35707,506           |
+| 3       | 44730,953           |
+| 4       | 48479,960           |
+| 5       | 49420,472           |
+| 6       | 49859,833           |
+| 7       | 51131,707           |
+| 8       | 50978,651           |
+| 9       | 50895,702           |
 
-![1 to 9 threads](https://cldup.com/or3uzAi-As-2000x2000.png)
 
-I think that the optimal variant of threads number is slightly bigger than the CPU cores number - **6 threads** for this test. This is clearly visible on the chart.
+![1 to 9 threads](https://cldup.com/OdTYu7WsSy-3000x3000.png)
+
+The optimal variant of threads number is the CPU cores number - **4 threads**. This is clearly visible on the chart.
 
 ## 10 to 100 threads (results table and chart)
 | Threads | Requests per second |
@@ -34,7 +36,7 @@ I think that the optimal variant of threads number is slightly bigger than the C
 ![10 to 100 threads, zoom](https://cldup.com/TQ3iJbHSbE-3000x3000.png)
 
 ## Results analysis
-The number of requests per second increases pretty good until reaching the number of CPU cores (4). Also, it is slightly increased in the next two steps after that moment. Results looking such way because of physical limit for multithreaded applications. When the number of threads is bigger than CPU cores number a computer cannot use the same number of real threats as the application wants to get.
+The number of requests per second increases pretty good until reaching the number of CPU cores (4). Results looking such way because of physical limit for multithreaded applications. When the number of threads is bigger than CPU cores number a computer cannot use the same number of real threats as the application wants to get.
 
 ## CPU info
 ```sh
@@ -64,3 +66,4 @@ L2 cache:              256K
 L3 cache:              3072K
 NUMA node0 CPU(s):     0-3
 ```
+This CPU have 2 cores but the hyper-threading technology increases this value to 4.
