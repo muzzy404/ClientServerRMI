@@ -1,25 +1,28 @@
 import java.rmi.registry.Registry;
+import java.util.concurrent.Callable;
 
-public class GetRandomNumberTask implements Runnable {
+public class GetRandomNumberTask implements Callable<Long> {
 
     private Registry registry;
-    private int requests = 0;
+    private long requests = 0;
 
     public GetRandomNumberTask(Registry registry) {
         this.registry = registry;
     }
 
     @Override
-    public void run() {
+    public Long call() {
         try {
             RandomNumber randomNumber = (RandomNumber) registry.lookup(Constants.NAME);
-            while(true) {
+            while(!Thread.interrupted()) {
                 randomNumber.next();
                 ++requests;
-                System.out.println(Thread.currentThread().getName() + " " + String.valueOf(requests));
+                //System.out.println(Thread.currentThread().getName() + " " + String.valueOf(requests));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return requests;
     }
 }
