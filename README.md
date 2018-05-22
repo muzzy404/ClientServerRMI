@@ -66,4 +66,4 @@ L2 cache:              256K
 L3 cache:              3072K
 NUMA node0 CPU(s):     0-3
 ```
-This CPU have 2 cores but the hyper-threading technology increases this value to 4.
+This CPU has 2 cores but the hyper-threading technology increases this value to 4.
